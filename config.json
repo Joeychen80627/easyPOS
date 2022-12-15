@@ -1,15 +1,16 @@
 /* This is a JSON format configuration file
  */
 {
-    /*
+    
     //ssl:The global SSL settings. "key" and "cert" are the path to the SSL key and certificate. While
     //    "conf" is an array of 1 or 2-element tuples that supplies file style options for `SSL_CONF_cmd`.
     "ssl": {
-        "cert": "../../trantor/trantor/tests/server.pem",
-        "key": "../../trantor/trantor/tests/server.pem",
+        "cert": "",
+        "key": "",
         "conf": [
-            //["Options", "-SessionTicket"], 
-            //["Options", "Compression"]
+            ["Options", "-SessionTicket"],
+            ["Options", "Compression"],
+            ["min_protocol", "TLSv1.2"]
         ]
     },
     "listeners": [
@@ -32,7 +33,7 @@
             //use_old_tls: enable the TLS1.0/1.1, false by default
             "use_old_tls": false,
             "ssl_conf": [
-                //["MinProtocol", "TLSv1.3"]
+                ["MinProtocol", "TLSv1.3"]
             ]
         }
     ],
@@ -95,7 +96,7 @@
             //zero or negative value means no timeout.
             "timeout": -1.0
         }
-    ],*/
+    ],
     "app": {
         //number_of_threads: The number of IO threads, 1 by default, if the value is set to 0, the number of threads
         //is the number of CPU cores
